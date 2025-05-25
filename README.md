@@ -32,7 +32,7 @@
 
 ```bash
 # Клонирование репозитория
-git clone https://github.com/yourusername/product-comparison.git
+git clone https://github.com/yourusername/cursorcomare.git
 
 # Установка зависимостей
 npm install
