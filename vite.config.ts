@@ -7,8 +7,9 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: '/',
   server: {
-    host: "::",
+    host: true,
     port: 8080,
   },
   plugins: [
@@ -65,15 +66,28 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
           ui: ['@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu'],
           utils: ['date-fns', 'zod']
-        }
+        },
+        assetFileNames: (assetInfo) => {
+          const info = assetInfo.name.split('.');
+          const ext = info[info.length - 1];
+          if (/\.(css)$/.test(assetInfo.name)) {
+            return `assets/[name]-[hash][extname]`;
+          }
+          return `assets/[name]-[hash][extname]`;
+        },
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
       }
     },
-    chunkSizeWarningLimit: 1000
+    chunkSizeWarningLimit: 1000,
+    sourcemap: true
   }
 }));
