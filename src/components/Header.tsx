@@ -50,13 +50,13 @@ export const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-gray-800 bg-background-light dark:bg-background-dark transition-theme">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Логотип */}
           <Link to="/" className="flex items-center gap-2">
-            <Monitor className="h-6 w-6 text-primary-light dark:text-primary-dark transition-theme" />
-            <span className="text-xl font-bold text-text-light dark:text-text-dark transition-theme">
+            <Monitor className="h-6 w-6 text-primary" />
+            <span className="text-xl font-bold text-foreground">
               ProductCompare
             </span>
           </Link>
@@ -66,27 +66,27 @@ export const Header = () => {
             <nav className="flex items-center gap-6">
               <button
                 onClick={handleCompareClick}
-                className="text-text-light dark:text-text-dark hover:text-primary-light dark:hover:text-primary-dark transition-theme"
+                className="text-foreground hover:text-primary transition-theme"
               >
                 Сравнить товары
               </button>
               <Link
                 to="/about"
-                className="flex items-center gap-1 text-text-light dark:text-text-dark hover:text-primary-light dark:hover:text-primary-dark transition-theme"
+                className="flex items-center gap-1 text-foreground hover:text-primary transition-theme"
               >
                 <Info className="h-4 w-4" />
                 <span>О сервисе</span>
               </Link>
               <Link
                 to="/help"
-                className="flex items-center gap-1 text-text-light dark:text-text-dark hover:text-primary-light dark:hover:text-primary-dark transition-theme"
+                className="flex items-center gap-1 text-foreground hover:text-primary transition-theme"
               >
                 <HelpCircle className="h-4 w-4" />
                 <span>Помощь</span>
               </Link>
               <Link
                 to="/contacts"
-                className="flex items-center gap-1 text-text-light dark:text-text-dark hover:text-primary-light dark:hover:text-primary-dark transition-theme"
+                className="flex items-center gap-1 text-foreground hover:text-primary transition-theme"
               >
                 <Mail className="h-4 w-4" />
                 <span>Контакты</span>
@@ -98,26 +98,24 @@ export const Header = () => {
               <input
                 type="text"
                 placeholder="Искать товары..."
-                className="px-3 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-text-light dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary-light dark:focus:ring-primary-dark transition-theme"
+                className="px-3 py-2 rounded-lg border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-theme"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
-              <SearchIcon className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 dark:text-gray-500" />
+              <SearchIcon className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
 
               {/* Выпадающий список результатов поиска */}
               {searchTerm && searchResults.length > 0 && (
-                <div className="absolute top-full left-0 mt-2 w-full bg-white dark:bg-gray-800 rounded-lg shadow-lg z-10 border border-gray-200 dark:border-gray-700 max-h-60 overflow-y-auto">
-                  {
-                    searchResults.map(product => (
-                      <div
-                        key={product.id}
-                        className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer text-text-light dark:text-text-dark"
-                        onClick={() => handleProductClick(product)}
-                      >
-                        {product.name}
-                      </div>
-                    ))
-                  }
+                <div className="absolute top-full left-0 mt-2 w-full bg-background rounded-lg shadow-lg z-10 border border-border max-h-60 overflow-y-auto">
+                  {searchResults.map(product => (
+                    <div
+                      key={product.id}
+                      className="px-4 py-2 hover:bg-accent hover:text-accent-foreground cursor-pointer text-foreground"
+                      onClick={() => handleProductClick(product)}
+                    >
+                      {product.name}
+                    </div>
+                  ))}
                 </div>
               )}
             </div>
@@ -125,7 +123,7 @@ export const Header = () => {
             {/* Переключатель темы */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800 transition-theme"
+              className="p-2 rounded-lg text-foreground hover:bg-accent hover:text-accent-foreground transition-theme"
               aria-label={theme === 'dark' ? 'Включить светлую тему' : 'Включить темную тему'}
             >
               {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
@@ -134,62 +132,71 @@ export const Header = () => {
 
           {/* Мобильная кнопка меню */}
           <button
-            className="md:hidden p-2 rounded-lg text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800 transition-theme"
+            className="md:hidden p-2 rounded-lg text-foreground hover:bg-accent hover:text-accent-foreground transition-theme"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Меню"
           >
-            {isMobileMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
+            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
 
       {/* Мобильное меню */}
       {isMobileMenuOpen && (
-        <div className="md:hidden border-t border-gray-200 dark:border-gray-800 bg-background-light dark:bg-background-dark transition-theme">
-          <div className="container mx-auto px-4 py-4">
-            <nav className="flex flex-col gap-4">
+        <div className="md:hidden">
+          <div className="fixed inset-0 z-50 bg-background/80 backdrop-blur-sm" onClick={() => setIsMobileMenuOpen(false)} />
+          <div className="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-background p-6 shadow-lg">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-lg font-semibold text-foreground">Меню</h2>
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="p-2 rounded-lg text-foreground hover:bg-accent hover:text-accent-foreground transition-theme"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+
+            <nav className="space-y-4">
               <button
                 onClick={() => {
                   handleCompareClick();
                   setIsMobileMenuOpen(false);
                 }}
-                className="text-text-light dark:text-text-dark hover:text-primary-light dark:hover:text-primary-dark transition-theme"
+                className="w-full flex items-center gap-2 px-3 py-2 text-foreground hover:bg-accent hover:text-accent-foreground rounded-md transition-theme"
               >
+                <Monitor className="h-5 w-5" />
                 Сравнить товары
               </button>
               <Link
                 to="/about"
+                className="flex items-center gap-2 px-3 py-2 text-foreground hover:bg-accent hover:text-accent-foreground rounded-md transition-theme"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center gap-1 text-text-light dark:text-text-dark hover:text-primary-light dark:hover:text-primary-dark transition-theme"
               >
-                <Info className="h-4 w-4" />
-                <span>О сервисе</span>
+                <Info className="h-5 w-5" />
+                О сервисе
               </Link>
               <Link
                 to="/help"
+                className="flex items-center gap-2 px-3 py-2 text-foreground hover:bg-accent hover:text-accent-foreground rounded-md transition-theme"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center gap-1 text-text-light dark:text-text-dark hover:text-primary-light dark:hover:text-primary-dark transition-theme"
               >
-                <HelpCircle className="h-4 w-4" />
-                <span>Помощь</span>
+                <HelpCircle className="h-5 w-5" />
+                Помощь
               </Link>
               <Link
                 to="/contacts"
+                className="flex items-center gap-2 px-3 py-2 text-foreground hover:bg-accent hover:text-accent-foreground rounded-md transition-theme"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center gap-1 text-text-light dark:text-text-dark hover:text-primary-light dark:hover:text-primary-dark transition-theme"
               >
-                <Mail className="h-4 w-4" />
-                <span>Контакты</span>
+                <Mail className="h-5 w-5" />
+                Контакты
               </Link>
-              <div className="flex items-center justify-between pt-2 border-t border-gray-200 dark:border-gray-800">
-                <span className="text-text-light dark:text-text-dark transition-theme">Тема оформления</span>
+
+              <div className="flex items-center justify-between pt-2 border-t border-border">
+                <span className="text-foreground">Тема оформления</span>
                 <button
                   onClick={toggleTheme}
-                  className="p-2 rounded-lg text-text-light dark:text-text-dark hover:bg-gray-100 dark:hover:bg-gray-800 transition-theme"
+                  className="p-2 rounded-lg text-foreground hover:bg-accent hover:text-accent-foreground transition-theme"
                   aria-label={theme === 'dark' ? 'Включить светлую тему' : 'Включить темную тему'}
                 >
                   {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
