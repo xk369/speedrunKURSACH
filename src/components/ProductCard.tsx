@@ -12,9 +12,9 @@ interface ProductCardProps {
 
 export const ProductCard = ({ product, isSelected, onSelect, onBuy, canSelect }: ProductCardProps) => {
   return (
-    <div className="group relative bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700">
+    <div className="group relative bg-background rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-border">
       {/* Изображение продукта */}
-      <div className="aspect-square bg-gray-50 dark:bg-gray-900 p-6">
+      <div className="aspect-square bg-muted p-6">
         <img
           src={product.image}
           alt={product.name}
@@ -24,10 +24,10 @@ export const ProductCard = ({ product, isSelected, onSelect, onBuy, canSelect }:
 
       {/* Информация о продукте */}
       <div className="p-4">
-        <h3 className="font-semibold text-lg text-text-light dark:text-text-dark mb-2 line-clamp-2">
+        <h3 className="font-semibold text-lg text-foreground mb-2 line-clamp-2">
           {product.name}
         </h3>
-        <p className="text-xl font-bold text-primary-light dark:text-primary-dark mb-4">
+        <p className="text-xl font-bold text-primary mb-4">
           {product.price}
         </p>
 
@@ -36,7 +36,7 @@ export const ProductCard = ({ product, isSelected, onSelect, onBuy, canSelect }:
           {product.features.map((feature, index) => (
             <div
               key={index}
-              className="text-sm text-secondary-light dark:text-secondary-dark"
+              className="text-sm text-muted-foreground"
             >
               • {feature}
             </div>
@@ -50,8 +50,8 @@ export const ProductCard = ({ product, isSelected, onSelect, onBuy, canSelect }:
             disabled={!canSelect && !isSelected}
             className={`flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg transition-colors ${
               isSelected
-                ? 'bg-primary-light dark:bg-primary-dark text-white'
-                : 'bg-gray-100 dark:bg-gray-700 text-text-light dark:text-text-dark hover:bg-gray-200 dark:hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed'
+                ? 'bg-primary text-primary-foreground'
+                : 'bg-muted text-muted-foreground hover:bg-accent hover:text-accent-foreground disabled:opacity-50 disabled:cursor-not-allowed'
             }`}
           >
             {isSelected ? (
@@ -68,7 +68,7 @@ export const ProductCard = ({ product, isSelected, onSelect, onBuy, canSelect }:
           </button>
           <button
             onClick={onBuy}
-            className="p-2 rounded-lg bg-primary-light dark:bg-primary-dark text-white hover:bg-primary-light/90 dark:hover:bg-primary-dark/90 transition-colors"
+            className="p-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
             aria-label="Купить"
           >
             <ShoppingCart className="h-5 w-5" />

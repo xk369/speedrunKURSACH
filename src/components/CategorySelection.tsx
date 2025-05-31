@@ -19,7 +19,7 @@ export const CategorySelection = ({ selectedCategory, onSelectCategory }: Catego
   return (
     <section id="category-selection" className="py-12">
       <div className="mb-8">
-        <h2 className="text-2xl font-bold text-text-light dark:text-text-dark mb-4 transition-theme">
+        <h2 className="text-2xl font-bold text-foreground mb-4">
           Выберите категорию
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -34,8 +34,8 @@ export const CategorySelection = ({ selectedCategory, onSelectCategory }: Catego
                   flex flex-col items-center justify-center p-4 rounded-xl
                   transition-all duration-300 ease-in-out
                   ${selectedCategory === category.id
-                    ? 'bg-primary-light dark:bg-primary-dark text-white shadow-lg scale-105'
-                    : 'bg-white dark:bg-gray-800 text-text-light dark:text-text-dark hover:bg-gray-50 dark:hover:bg-gray-700'
+                    ? 'bg-primary text-primary-foreground shadow-lg scale-105'
+                    : 'bg-background text-foreground hover:bg-accent hover:text-accent-foreground border border-border'
                   }
                 `}
               >

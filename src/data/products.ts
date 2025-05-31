@@ -13,7 +13,7 @@ export const products = {
       id: 'iphone-15-pro-max',
       name: 'iPhone 15 Pro Max',
       price: '134 990 ₽',
-      image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400',
+      image: '/images/products/15promax.jpeg',
       features: ['A17 Pro чип', '6.7" дисплей', '5x оптический зум', 'Титановый корпус'],
       specs: {
         display: '6.7" Super Retina XDR',
@@ -27,7 +27,7 @@ export const products = {
       id: 'iphone-15-pro',
       name: 'iPhone 15 Pro',
       price: '114 990 ₽',
-      image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400',
+      image: '/images/products/15pro.jpeg',
       features: ['A17 Pro чип', '6.1" дисплей', '3x оптический зум', 'Титановый корпус'],
       specs: {
         display: '6.1" Super Retina XDR',
@@ -41,7 +41,7 @@ export const products = {
       id: 'iphone-15-plus',
       name: 'iPhone 15 Plus',
       price: '99 990 ₽',
-      image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400',
+      image: '/images/products/15plus.jpeg',
       features: ['A16 Bionic чип', '6.7" дисплей', '2x оптический зум', 'Алюминиевый корпус'],
       specs: {
         display: '6.7" Super Retina XDR',
@@ -55,7 +55,7 @@ export const products = {
       id: 'iphone-15',
       name: 'iPhone 15',
       price: '89 990 ₽',
-      image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400',
+      image: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&q=80&auto=format&fit=crop&crop=entropy&w=400&h=400',
       features: ['A16 Bionic чип', '6.1" дисплей', '2x оптический зум', 'Алюминиевый корпус'],
       specs: {
         display: '6.1" Super Retina XDR',
@@ -69,7 +69,7 @@ export const products = {
       id: 'iphone-14',
       name: 'iPhone 14',
       price: '69 990 ₽',
-      image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400',
+      image: '/images/products/14.jpeg',
       features: ['A15 Bionic чип', '6.1" дисплей', '2x оптический зум', 'Алюминиевый корпус'],
       specs: {
         display: '6.1" Super Retina XDR',
@@ -83,7 +83,7 @@ export const products = {
       id: 'iphone-se',
       name: 'iPhone SE',
       price: '49 990 ₽',
-      image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400',
+      image: 'https://images.unsplash.com/photo-1591337676887-a217a6970a8a?w=400',
       features: ['A15 Bionic чип', '4.7" дисплей', 'Touch ID', 'Компактный дизайн'],
       specs: {
         display: '4.7" Retina HD',
@@ -97,7 +97,7 @@ export const products = {
       id: 'iphone-13-mini',
       name: 'iPhone 13 mini',
       price: '59 990 ₽',
-      image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400',
+      image: '/images/products/13mini.jpeg',
       features: ['A15 Bionic чип', '5.4" дисплей', 'Компактный размер', 'Face ID'],
       specs: {
         display: '5.4" Super Retina XDR',
@@ -111,7 +111,7 @@ export const products = {
       id: 'iphone-12',
       name: 'iPhone 12',
       price: '49 990 ₽',
-      image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400',
+      image: 'https://images.unsplash.com/photo-1605236453806-6ff36851218e?w=400',
       features: ['A14 Bionic чип', '6.1" дисплей', 'OLED', 'Face ID'],
       specs: {
         display: '6.1" Super Retina XDR',
@@ -125,7 +125,7 @@ export const products = {
       id: 'iphone-xr',
       name: 'iPhone XR',
       price: '39 990 ₽',
-      image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=400',
+      image: 'https://images.unsplash.com/photo-1565849904461-04a58ad377e0?w=400',
       features: ['A12 Bionic чип', '6.1" дисплей', 'Face ID', 'Яркие цвета'],
       specs: {
         display: '6.1" Liquid Retina',
@@ -139,7 +139,7 @@ export const products = {
       id: 'samsung-s24-ultra',
       name: 'Samsung Galaxy S24 Ultra',
       price: '129 990 ₽',
-      image: 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=400',
+      image: '/images/products/samsungultra.jpeg',
       features: ['Snapdragon 8 Gen 3', '6.8" дисплей', '200МП камера', 'S Pen'],
       specs: {
         display: '6.8" Dynamic AMOLED 2X',
@@ -153,7 +153,7 @@ export const products = {
       id: 'samsung-s24-plus',
       name: 'Samsung Galaxy S24+',
       price: '99 990 ₽',
-      image: 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=400',
+      image: '/images/products/samsungplus.jpeg',
       features: ['Snapdragon 8 Gen 3', '6.7" дисплей', '50МП камера', 'Быстрая зарядка'],
       specs: {
         display: '6.7" Dynamic AMOLED 2X',
@@ -167,7 +167,7 @@ export const products = {
       id: 'pixel-8-pro',
       name: 'Google Pixel 8 Pro',
       price: '89 990 ₽',
-      image: 'https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400',
+      image: '/images/products/pixel.jpeg',
       features: ['Tensor G3', '6.7" дисплей', '50МП камера', 'ИИ-функции'],
       specs: {
         display: '6.7" LTPO OLED',
@@ -183,7 +183,7 @@ export const products = {
       id: 'ipad-pro-12',
       name: 'iPad Pro 12.9"',
       price: '124 990 ₽',
-      image: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400',
+      image: '/images/products/ipad-pro-12-9.jpg',
       features: ['M2 чип', '12.9" дисплей', 'Поддержка Apple Pencil', 'Face ID'],
       specs: {
         display: '12.9" Liquid Retina XDR',
@@ -197,7 +197,7 @@ export const products = {
       id: 'ipad-pro-11',
       name: 'iPad Pro 11"',
       price: '94 990 ₽',
-      image: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400',
+      image: '/images/products/ipadpro11.jpeg',
       features: ['M2 чип', '11" дисплей', 'Поддержка Apple Pencil', 'Face ID'],
       specs: {
         display: '11" Liquid Retina',
@@ -211,7 +211,7 @@ export const products = {
       id: 'ipad-air',
       name: 'iPad Air',
       price: '74 990 ₽',
-      image: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400',
+      image: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400&q=80&auto=format&fit=crop&crop=entropy&w=400&h=400',
       features: ['M1 чип', '10.9" дисплей', 'Touch ID', 'USB-C'],
       specs: {
         display: '10.9" Liquid Retina',
@@ -225,7 +225,7 @@ export const products = {
       id: 'ipad-10',
       name: 'iPad (10-го поколения)',
       price: '44 990 ₽',
-      image: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400',
+      image: '/images/products/iPad10.jpeg',
       features: ['A14 Bionic чип', '10.9" дисплей', 'Touch ID', 'USB-C'],
       specs: {
         display: '10.9" Liquid Retina',
@@ -239,7 +239,7 @@ export const products = {
       id: 'ipad-mini',
       name: 'iPad mini',
       price: '64 990 ₽',
-      image: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400',
+      image: '/images/products/iPadmini.jpeg',
       features: ['A15 Bionic чип', '8.3" дисплей', 'Touch ID', 'Портативный'],
       specs: {
         display: '8.3" Liquid Retina',
@@ -253,7 +253,7 @@ export const products = {
       id: 'ipad-pro-2021',
       name: 'iPad Pro 2021',
       price: '109 990 ₽',
-      image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400',
+      image: '/images/products/ipadpro2021.jpeg',
       features: ['M1 чип', '12.9" дисплей', 'Thunderbolt', 'Face ID'],
       specs: {
         display: '12.9" Liquid Retina XDR',
@@ -267,7 +267,7 @@ export const products = {
       id: 'ipad-9',
       name: 'iPad (9-го поколения)',
       price: '29 990 ₽',
-      image: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=400',
+      image: '/images/products/iPad9.jpeg',
       features: ['A13 Bionic чип', '10.2" дисплей', 'Touch ID', 'Поддержка Apple Pencil'],
       specs: {
         display: '10.2" Retina',
@@ -281,7 +281,7 @@ export const products = {
       id: 'ipad-mini-5',
       name: 'iPad mini 5',
       price: '39 990 ₽',
-      image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=400',
+      image: '/images/products/ipadmini5.jpeg',
       features: ['A12 Bionic чип', '7.9" дисплей', 'Touch ID', 'Портативный'],
       specs: {
         display: '7.9" Retina',
@@ -295,7 +295,7 @@ export const products = {
       id: 'galaxy-tab-s9-ultra',
       name: 'Samsung Galaxy Tab S9 Ultra',
       price: '149 990 ₽',
-      image: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400',
+      image: '/images/products/SamsungS9.jpeg',
       features: ['Snapdragon 8 Gen 2', '14.6" дисплей', 'S Pen', 'IP68'],
       specs: {
         display: '14.6" Dynamic AMOLED 2X',
@@ -309,7 +309,7 @@ export const products = {
       id: 'galaxy-tab-s9-plus',
       name: 'Samsung Galaxy Tab S9+',
       price: '119 990 ₽',
-      image: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400',
+      image: 'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400&q=80&auto=format&fit=crop&crop=entropy&w=400&h=400',
       features: ['Snapdragon 8 Gen 2', '12.4" дисплей', 'S Pen', 'IP68'],
       specs: {
         display: '12.4" Dynamic AMOLED 2X',
@@ -325,7 +325,7 @@ export const products = {
       id: 'macbook-pro-16',
       name: 'MacBook Pro 16"',
       price: '249 990 ₽',
-      image: 'https://unsplash.com/photos/a-laptop-computer-sitting-on-top-of-a-white-table-tAiXthpxA28',
+      image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400',
       features: ['M3 Pro чип', '16" дисплей', 'до 22 часов работы', 'MagSafe 3'],
       specs: {
         display: '16.2" Liquid Retina XDR',
@@ -339,7 +339,7 @@ export const products = {
       id: 'macbook-pro-14',
       name: 'MacBook Pro 14"',
       price: '199 990 ₽',
-      image: 'https://unsplash.com/photos/a-laptop-computer-sitting-on-top-of-a-wooden-desk-IUBEBe8sQ-U',
+      image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&q=80&auto=format&fit=crop&crop=entropy&w=400&h=400',
       features: ['M3 Pro чип', '14" дисплей', 'до 18 часов работы', 'MagSafe 3'],
       specs: {
         display: '14.2" Liquid Retina XDR',
@@ -353,7 +353,7 @@ export const products = {
       id: 'macbook-air-15',
       name: 'MacBook Air 15"',
       price: '149 990 ₽',
-      image: 'https://unsplash.com/photos/a-laptop-computer-sitting-on-top-of-a-white-desk-dq5rTIBMpNo',
+      image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&q=80&auto=format&fit=crop&crop=entropy&w=400&h=400',
       features: ['M2 чип', '15.3" дисплей', 'до 18 часов работы', 'MagSafe 3'],
       specs: {
         display: '15.3" Liquid Retina',
@@ -367,7 +367,7 @@ export const products = {
       id: 'macbook-air-13',
       name: 'MacBook Air 13"',
       price: '119 990 ₽',
-      image: 'https://unsplash.com/photos/silver-macbook-on-white-fabric-sofa-OuxSTrA1Z6M',
+      image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&q=80&auto=format&fit=crop&crop=entropy&w=400&h=400',
       features: ['M2 чип', '13.6" дисплей', 'до 18 часов работы', 'MagSafe 3'],
       specs: {
         display: '13.6" Liquid Retina',
@@ -381,7 +381,7 @@ export const products = {
       id: 'imac-24',
       name: 'iMac 24"',
       price: '134 990 ₽',
-      image: 'https://unsplash.com/photos/a-computer-monitor-sitting-on-top-of-a-wooden-desk-dDkJtxVPOjE',
+      image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&q=80&auto=format&fit=crop&crop=entropy&w=400&h=400',
       features: ['M3 чип', '24" 4.5K дисплей', 'Magic Keyboard', 'Magic Mouse'],
       specs: {
         display: '24" 4.5K Retina',
@@ -395,7 +395,7 @@ export const products = {
       id: 'mac-studio',
       name: 'Mac Studio',
       price: '229 990 ₽',
-      image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400',
+      image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&q=80&auto=format&fit=crop&crop=entropy&w=400&h=400',
       features: ['M2 Max чип', 'Компактный дизайн', 'Множество портов', 'Профессиональная производительность'],
       specs: {
         display: 'Внешний дисплей',
@@ -409,7 +409,7 @@ export const products = {
       id: 'macbook-air-m1',
       name: 'MacBook Air M1',
       price: '99 990 ₽',
-      image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400',
+      image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&q=80&auto=format&fit=crop&crop=entropy&w=400&h=400',
       features: ['M1 чип', '13.3" дисплей', 'Бесшумная работа', 'До 18 часов'],
       specs: {
         display: '13.3" Retina',
@@ -423,7 +423,7 @@ export const products = {
       id: 'mac-mini-m2',
       name: 'Mac mini M2',
       price: '79 990 ₽',
-      image: 'https://images.unsplash.com/photo-1465101046530-73398c7f28ca?w=400',
+      image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&q=80&auto=format&fit=crop&crop=entropy&w=400&h=400',
       features: ['M2 чип', 'Компактный корпус', 'Множество портов', 'Тихая работа'],
       specs: {
         display: 'Внешний дисплей',
@@ -437,7 +437,7 @@ export const products = {
       id: 'imac-27',
       name: 'iMac 27" (2020)',
       price: '159 990 ₽',
-      image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=400',
+      image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400&q=80&auto=format&fit=crop&crop=entropy&w=400&h=400',
       features: ['Intel i7/i9', '27" 5K дисплей', 'Magic Keyboard', 'Magic Mouse'],
       specs: {
         display: '27" 5K Retina',
@@ -465,7 +465,7 @@ export const products = {
       id: 'dell-xps-13',
       name: 'Dell XPS 13',
       price: '149 990 ₽',
-      image: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=400',
+      image: 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=400&q=80&auto=format&fit=crop&crop=entropy&w=400&h=400',
       features: ['Intel Core i7', '13.4" дисплей', 'Intel Iris Xe', 'Безрамочный'],
       specs: {
         display: '13.4" 4K UHD+',
@@ -481,7 +481,7 @@ export const products = {
       id: 'apple-watch-ultra-2',
       name: 'Apple Watch Ultra 2',
       price: '79 990 ₽',
-      image: 'https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400',
+      image: '/images/products/ultra8.jpeg',
       features: ['S9 чип', '49мм дисплей', 'До 36 часов', 'Титан'],
       specs: {
         display: '49мм Always-On Retina',
@@ -495,7 +495,7 @@ export const products = {
       id: 'apple-watch-series-9',
       name: 'Apple Watch Series 9',
       price: '39 990 ₽',
-      image: 'https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400',
+      image: 'https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400&q=80&auto=format&fit=crop&crop=entropy&w=400&h=400',
       features: ['S9 чип', '41/45мм дисплей', 'До 18 часов', 'Алюминий/Сталь'],
       specs: {
         display: '41/45мм Always-On Retina',
@@ -538,7 +538,7 @@ export const products = {
       id: 'airpods-max',
       name: 'Apple AirPods Max',
       price: '59 990 ₽',
-      image: 'https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=400',
+      image: '/images/products/airpodsmax.jpeg',
       features: ['Активное шумоподавление', 'Пространственное аудио', 'До 20 часов', 'Алюминий'],
       specs: {
         battery: 'До 20 часов (ANC)',
@@ -550,7 +550,7 @@ export const products = {
       id: 'sony-wh-1000xm5',
       name: 'Sony WH-1000XM5',
       price: '39 990 ₽',
-      image: 'https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=400',
+      image: 'https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=400&q=80&auto=format&fit=crop&crop=entropy&w=400&h=400',
       features: ['Активное шумоподавление', '30 часов работы', 'Быстрая зарядка', 'Сенсорное управление'],
       specs: {
         battery: 'До 30 часов (ANC)',
@@ -577,7 +577,7 @@ export const products = {
       id: 'canon-r6-mark-ii',
       name: 'Canon EOS R6 Mark II',
       price: '229 990 ₽',
-      image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400',
+      image: '/images/products/canon.jpeg',
       features: ['24МП полнокадровая матрица', '4K 60p', 'IBIS', 'Двойные слота SD'],
       specs: {
         sensor: '24МП полнокадровый CMOS',
@@ -590,7 +590,7 @@ export const products = {
       id: 'fujifilm-x-t5',
       name: 'Fujifilm X-T5',
       price: '179 990 ₽',
-      image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400',
+      image: '/images/products/fujifilmxt5 .jpeg',
       features: ['40МП APS-C матрица', '6.2K 30p', 'IBIS', 'Двойные слота SD'],
       specs: {
         sensor: '40МП APS-C X-Trans CMOS 5 HR',
