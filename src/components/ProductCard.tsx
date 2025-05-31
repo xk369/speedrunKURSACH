@@ -1,92 +1,80 @@
-
 import React from 'react';
-import { Plus, Check, Minus } from 'lucide-react';
-
-interface Product {
-  id: string;
-  name: string;
-  price: string;
-  image: string;
-  features: string[];
-  specs: Record<string, string>;
-}
+import { Plus, Check, ShoppingCart } from 'lucide-react';
+import { Product } from '@/data/products';
 
 interface ProductCardProps {
   product: Product;
   isSelected: boolean;
-  onToggle: () => void;
+  onSelect: () => void;
   onBuy: () => void;
   canSelect: boolean;
 }
 
-export const ProductCard = ({ product, isSelected, onToggle, canSelect, onBuy }: ProductCardProps) => {
+export const ProductCard = ({ product, isSelected, onSelect, onBuy, canSelect }: ProductCardProps) => {
   return (
-    <div className={`
-      relative bg-white rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl overflow-hidden
-      ${isSelected ? 'ring-2 ring-blue-500 transform scale-105' : 'hover:transform hover:scale-102'}
-    `}>
-      <div className="aspect-square bg-gray-50 flex items-center justify-center p-8">
+    <div className="group relative bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden border border-gray-200 dark:border-gray-700">
+      {/* Изображение продукта */}
+      <div className="aspect-square bg-gray-50 dark:bg-gray-900 p-6">
         <img
           src={product.image}
           alt={product.name}
           className="w-full h-full object-contain"
         />
       </div>
-      
-      <div className="p-6">
-        <h3 className="text-xl font-bold text-gray-900 mb-2">{product.name}</h3>
-        <p className="text-2xl font-bold text-blue-600 mb-4">{product.price}</p>
-        
-        <ul className="space-y-2 mb-6">
+
+      {/* Информация о продукте */}
+      <div className="p-4">
+        <h3 className="font-semibold text-lg text-text-light dark:text-text-dark mb-2 line-clamp-2">
+          {product.name}
+        </h3>
+        <p className="text-xl font-bold text-primary-light dark:text-primary-dark mb-4">
+          {product.price}
+        </p>
+
+        {/* Основные характеристики */}
+        <div className="space-y-2 mb-4">
           {product.features.map((feature, index) => (
-            <li key={index} className="text-sm text-gray-600 flex items-center">
-              <Check size={16} className="text-green-500 mr-2 flex-shrink-0" />
-              {feature}
-            </li>
+            <div
+              key={index}
+              className="text-sm text-secondary-light dark:text-secondary-dark"
+            >
+              • {feature}
+            </div>
           ))}
-        </ul>
-        
-        <div className="space-y-3">
+        </div>
+
+        {/* Кнопки действий */}
+        <div className="flex items-center gap-2">
           <button
-            onClick={onToggle}
+            onClick={onSelect}
             disabled={!canSelect && !isSelected}
-            className={`
-              w-full py-3 px-4 rounded-xl font-semibold transition-all duration-200 flex items-center justify-center space-x-2
-              ${isSelected 
-                ? 'bg-blue-600 text-white hover:bg-blue-700' 
-                : canSelect 
-                  ? 'bg-gray-100 text-gray-700 hover:bg-gray-200' 
-                  : 'bg-gray-50 text-gray-400 cursor-not-allowed'
-              }
-            `}
+            className={`flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg transition-colors ${
+              isSelected
+                ? 'bg-primary-light dark:bg-primary-dark text-white'
+                : 'bg-gray-100 dark:bg-gray-700 text-text-light dark:text-text-dark hover:bg-gray-200 dark:hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed'
+            }`}
           >
             {isSelected ? (
               <>
-                <Minus size={20} />
-                <span>Убрать из сравнения</span>
+                <Check className="h-4 w-4" />
+                <span>Выбрано</span>
               </>
             ) : (
               <>
-                <Plus size={20} />
-                <span>{canSelect ? 'Добавить к сравнению' : 'Максимум 3 продукта'}</span>
+                <Plus className="h-4 w-4" />
+                <span>{canSelect ? 'Сравнить' : 'Лимит (3)'}</span>
               </>
             )}
           </button>
-          
-          <button 
+          <button
             onClick={onBuy}
-            className="w-full py-3 px-4 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-colors"
+            className="p-2 rounded-lg bg-primary-light dark:bg-primary-dark text-white hover:bg-primary-light/90 dark:hover:bg-primary-dark/90 transition-colors"
+            aria-label="Купить"
           >
-            Купить
+            <ShoppingCart className="h-5 w-5" />
           </button>
         </div>
       </div>
-      
-      {isSelected && (
-        <div className="absolute top-4 right-4 bg-blue-600 text-white rounded-full p-2">
-          <Check size={16} />
-        </div>
-      )}
     </div>
   );
 };

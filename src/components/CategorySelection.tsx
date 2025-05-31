@@ -1,90 +1,49 @@
-
-import React, { useState } from 'react';
-import { Smartphone, Tablet, Monitor } from 'lucide-react';
-import { ProductGrid } from './ProductGrid';
+import React from 'react';
+import { Smartphone, Tablet, Monitor, Watch, Headphones, Camera } from 'lucide-react';
 
 const categories = [
-  {
-    id: 'iphone',
-    name: 'iPhone',
-    icon: Smartphone,
-    description: 'Мощные смартфоны с передовыми технологиями',
-    gradient: 'from-blue-500 to-blue-700'
-  },
-  {
-    id: 'ipad',
-    name: 'iPad',
-    icon: Tablet,
-    description: 'Универсальные планшеты для работы и творчества',
-    gradient: 'from-purple-500 to-purple-700'
-  },
-  {
-    id: 'mac',
-    name: 'Mac',
-    icon: Monitor,
-    description: 'Профессиональные компьютеры для любых задач',
-    gradient: 'from-gray-600 to-gray-800'
-  }
+  { id: 'smartphones', name: 'Смартфоны', icon: Smartphone },
+  { id: 'tablets', name: 'Планшеты', icon: Tablet },
+  { id: 'laptops', name: 'Ноутбуки', icon: Monitor },
+  { id: 'watches', name: 'Умные часы', icon: Watch },
+  { id: 'headphones', name: 'Наушники', icon: Headphones },
+  { id: 'cameras', name: 'Фотоаппараты', icon: Camera },
 ];
 
-export const CategorySelection = () => {
-  const [selectedCategory, setSelectedCategory] = useState('iphone');
+interface CategorySelectionProps {
+  selectedCategory: string;
+  onSelectCategory: (category: string) => void;
+}
 
+export const CategorySelection = ({ selectedCategory, onSelectCategory }: CategorySelectionProps) => {
   return (
-    <section id="category-selection" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            Выберите категорию
-          </h2>
-          <p className="text-xl text-gray-600">
-            Сравните продукты в каждой категории
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+    <section id="category-selection" className="py-12">
+      <div className="mb-8">
+        <h2 className="text-2xl font-bold text-text-light dark:text-text-dark mb-4 transition-theme">
+          Выберите категорию
+        </h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {categories.map((category) => {
             const Icon = category.icon;
-            const isSelected = selectedCategory === category.id;
-            
             return (
-              <div
+              <button
                 key={category.id}
+                onClick={() => onSelectCategory(category.id)}
                 data-category={category.id}
-                onClick={() => setSelectedCategory(category.id)}
                 className={`
-                  relative cursor-pointer p-8 rounded-2xl transition-all duration-300 transform hover:scale-105
-                  ${isSelected 
-                    ? 'bg-gradient-to-br ' + category.gradient + ' text-white shadow-2xl' 
-                    : 'bg-gray-50 text-gray-700 hover:bg-gray-100'
+                  flex flex-col items-center justify-center p-4 rounded-xl
+                  transition-all duration-300 ease-in-out
+                  ${selectedCategory === category.id
+                    ? 'bg-primary-light dark:bg-primary-dark text-white shadow-lg scale-105'
+                    : 'bg-white dark:bg-gray-800 text-text-light dark:text-text-dark hover:bg-gray-50 dark:hover:bg-gray-700'
                   }
                 `}
               >
-                <div className="text-center">
-                  <div className={`
-                    inline-flex items-center justify-center w-16 h-16 rounded-full mb-4
-                    ${isSelected ? 'bg-white/20' : 'bg-white shadow-md'}
-                  `}>
-                    <Icon 
-                      size={32} 
-                      className={isSelected ? 'text-white' : 'text-gray-700'} 
-                    />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-2">{category.name}</h3>
-                  <p className={`text-sm ${isSelected ? 'text-white/80' : 'text-gray-600'}`}>
-                    {category.description}
-                  </p>
-                </div>
-                {isSelected && (
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/10 to-transparent pointer-events-none" />
-                )}
-              </div>
+                <Icon className="h-6 w-6 mb-2" />
+                <span className="text-sm font-medium">{category.name}</span>
+              </button>
             );
           })}
-        </div>
-
-        <div id="products-section">
-          <ProductGrid category={selectedCategory} />
         </div>
       </div>
     </section>

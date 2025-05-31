@@ -1,35 +1,35 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Header } from '@/components/Header';
+import { Home } from '@/pages/Home';
+import { About } from '@/pages/About';
+import { Help } from '@/pages/Help';
+import { Contacts } from '@/pages/Contacts';
+import { Footer } from '@/components/Footer';
+import { useTheme } from '@/hooks/use-theme';
+import { CategoryProvider } from '@/context/CategoryContext';
 
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import About from "./pages/About";
-import Favorites from "./pages/Favorites";
-import Contacts from "./pages/Contacts";
-import Help from "./pages/Help";
-import NotFound from "./pages/NotFound";
+function App() {
+  const { theme } = useTheme();
 
-const queryClient = new QueryClient();
-
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/favorites" element={<Favorites />} />
-          <Route path="/contacts" element={<Contacts />} />
-          <Route path="/help" element={<Help />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+  return (
+    <Router>
+      <CategoryProvider>
+        <div className={`min-h-screen bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-theme ${theme}`}>
+          <Header />
+          <main className="container mx-auto px-4 py-8">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/help" element={<Help />} />
+              <Route path="/contacts" element={<Contacts />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </CategoryProvider>
+    </Router>
+  );
+}
 
 export default App;

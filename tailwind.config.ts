@@ -1,12 +1,13 @@
 import type { Config } from "tailwindcss";
 
-export default {
-	darkMode: ["class"],
+const config: Config = {
+	darkMode: 'class',
 	content: [
 		"./pages/**/*.{ts,tsx}",
 		"./components/**/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
 		"./src/**/*.{ts,tsx}",
+		"./src/**/*.{js,jsx}",
 	],
 	prefix: "",
 	theme: {
@@ -22,13 +23,24 @@ export default {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
-				background: 'hsl(var(--background))',
+				background: {
+					light: '#f8fafc',
+					dark: '#1a1a1a',
+				},
 				foreground: 'hsl(var(--foreground))',
+				text: {
+					light: '#1e293b',
+					dark: '#ffffff',
+				},
 				primary: {
+					light: '#2563eb',
+					dark: '#60a5fa',
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
 				},
 				secondary: {
+					light: '#475569',
+					dark: '#9ca3af',
 					DEFAULT: 'hsl(var(--secondary))',
 					foreground: 'hsl(var(--secondary-foreground))'
 				},
@@ -89,8 +101,19 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+			},
+			transitionProperty: {
+				'theme': 'background-color, border-color, color, fill, stroke',
+			},
+			transitionDuration: {
+				'theme': '500ms',
+			},
+			transitionTimingFunction: {
+				'theme': 'cubic-bezier(0.4, 0, 0.2, 1)',
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
-} satisfies Config;
+};
+
+export default config;
