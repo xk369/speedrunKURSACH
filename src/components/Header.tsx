@@ -26,10 +26,51 @@ export const Header = () => {
   }, [searchTerm]);
 
   const handleProductClick = (product: Product) => {
-    // TODO: Implement navigation to product category and scroll
-    console.log('Selected product:', product);
-    setSearchTerm(''); // Очищаем поле поиска после выбора
-    setSearchResults([]);
+    // Находим категорию продукта
+    const category = Object.entries(products).find(([_, products]) =>
+      products.some(p => p.id === product.id)
+    )?.[0];
+
+    if (category) {
+      // Переходим на главную страницу, если мы не на ней
+      if (location.pathname !== '/') {
+        navigate('/');
+      }
+      
+      // Сбрасываем поиск
+      setSearchTerm('');
+      setSearchResults([]);
+      setIsMobileMenuOpen(false);
+      
+      // Прокрутка к категории и выбор продукта
+      setTimeout(() => {
+        const categorySection = document.querySelector(`[data-category="${category}"]`);
+        if (categorySection) {
+          // Прокручиваем к категории
+          categorySection.scrollIntoView({ behavior: 'smooth' });
+          // Симулируем клик по категории для её выбора
+          const categoryButton = categorySection.closest('button');
+          if (categoryButton) {
+            categoryButton.click();
+          }
+          
+          // Добавляем небольшую задержку для обновления UI
+          setTimeout(() => {
+            // Прокручиваем к самому продукту
+            const productElement = document.getElementById(`product-${product.id}`);
+            if (productElement) {
+              productElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              // Добавляем подсветку
+              productElement.classList.add('ring-2', 'ring-primary', 'ring-offset-2');
+              // Убираем подсветку через 2 секунды
+              setTimeout(() => {
+                productElement.classList.remove('ring-2', 'ring-primary', 'ring-offset-2');
+              }, 2000);
+            }
+          }, 100);
+        }
+      }, 100);
+    }
   };
 
   const handleCompareClick = () => {

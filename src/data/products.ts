@@ -538,7 +538,7 @@ export const products = {
       id: 'airpods-max',
       name: 'Apple AirPods Max',
       price: '59 990 ₽',
-      image: '/images/products/airpodsmax.jpeg',
+      image: '/images/products/airpodsmax.jpg',
       features: ['Активное шумоподавление', 'Пространственное аудио', 'До 20 часов', 'Алюминий'],
       specs: {
         battery: 'До 20 часов (ANC)',

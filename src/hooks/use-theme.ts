@@ -15,12 +15,16 @@ export const useTheme = () => {
     // Сохраняем тему в localStorage
     localStorage.setItem('theme', theme);
     
-    // Применяем тему к документу
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+    // Применяем тему к документу с небольшой задержкой
+    const timeoutId = setTimeout(() => {
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    }, 0); // Задержка 0ms - выполнится после текущего цикла событий
+
+    return () => clearTimeout(timeoutId);
   }, [theme]);
 
   // Слушаем изменения системной темы
