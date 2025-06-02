@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => ({
   define: {
     'process.env': {}
   },
-  base: mode === 'production' ? '/speedrunKURSACH/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/speedrunKURSACH/' : '/',
   resolve: {
     alias: [
       {
