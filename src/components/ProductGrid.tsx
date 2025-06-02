@@ -3,7 +3,7 @@ import { Plus, Check, Filter, SortAsc, SortDesc, ChevronDown } from 'lucide-reac
 import { ProductCard } from './ProductCard';
 import { ComparisonPanel } from './ComparisonPanel';
 import { ComparisonFloatingPanel } from './ComparisonFloatingPanel';
-import { products, Product } from '@/data/products';
+import { products, Product } from '../data/products';
 
 interface ProductGridProps {
   category: string;

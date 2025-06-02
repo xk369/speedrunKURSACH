@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Search } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { products, Product } from '@/data/products';
+import { products, Product } from '../data/products';
 
 export const Hero = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -34,7 +34,7 @@ export const Hero = () => {
       // Прокрутка к категории и выбор продукта
       setTimeout(() => {
         const categorySection = document.querySelector(`[data-category="${category}"]`);
-        if (categorySection) {
+        if (categorySection && categorySection instanceof HTMLElement) {
           categorySection.scrollIntoView({ behavior: 'smooth' });
           categorySection.click(); // Выбираем категорию
         }

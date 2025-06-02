@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Monitor, Menu, X, HelpCircle, Mail, Info, Sun, Moon, Search as SearchIcon } from 'lucide-react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { useTheme } from '@/hooks/use-theme';
-import { products, Product } from '@/data/products'; // Импортируем данные о продуктах
+import { useTheme } from '../hooks/use-theme';
+import { products, Product } from '../data/products'; // Импортируем данные о продуктах
 
 export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

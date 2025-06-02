@@ -1,15 +1,29 @@
-import { defineConfig } from "vite";
+import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import { visualizer } from "rollup-plugin-visualizer";
 import path from "path";
+import { fileURLToPath } from 'url';
 import { componentTagger } from "lovable-tagger";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  define: {
+    'process.env': {}
+  },
   base: mode === 'production' ? '/speedrunKURSACH/' : '/',
+  resolve: {
+    alias: [
+      {
+        find: '@',
+        replacement: path.resolve(__dirname, './src')
+      }
+    ]
+  },
   server: {
     host: true,
-    port: 8080,
+    port: 8080
   },
   optimizeDeps: {
     exclude: [
@@ -32,11 +46,7 @@ export default defineConfig(({ mode }) => ({
       filename: 'dist/stats.html'
     })
   ].filter(Boolean),
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
-  },
+
   build: {
     outDir: 'dist',
     assetsDir: 'assets',

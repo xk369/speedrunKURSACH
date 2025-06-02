@@ -1,8 +1,8 @@
 import React from 'react';
-import { Hero } from '@/components/Hero';
-import { CategorySelection } from '@/components/CategorySelection';
-import { ProductGrid } from '@/components/ProductGrid';
-import { useCategory } from '@/context/CategoryContext';
+import { Hero } from '../components/Hero';
+import { CategorySelection } from '../components/CategorySelection';
+import { ProductGrid } from '../components/ProductGrid';
+import { useCategory } from '../context/CategoryContext';
 
 export const Home = () => {
   const { selectedCategory, setSelectedCategory } = useCategory();
